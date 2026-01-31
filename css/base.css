@@ -43,6 +43,11 @@ body #big-container aside {
     grid-area: aside;
     background-color: white;
     box-shadow: var(--shadow);
+    overflow: auto;
+}
+
+body #big-container aside::-webkit-scrollbar {
+    display: none;
 }
 
 body #big-container main {

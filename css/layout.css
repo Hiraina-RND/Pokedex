@@ -77,4 +77,120 @@ body #big-container header #options .setting {
 body #big-container aside {
     border-bottom-left-radius: var(--radius-sm);
     border: 1px solid var(--border);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 30px;
+}
+
+body #big-container aside ul li {
+    list-style: none;
+}
+
+body #big-container aside .type-section {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+body #big-container aside .type-section .type-list {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+body #big-container aside .type-section .type-list li button i {
+    font-size: large;
+}
+
+body #big-container aside .type-section .type-list li button .fa-leaf {
+    color: var(--type-grass);
+}
+
+body #big-container aside .type-section .type-list li button .fa-fire {
+    color: var(--type-fire  );
+}
+
+body #big-container aside .type-section .type-list li button .fa-droplet {
+    color: var(--type-water);
+}
+
+body #big-container aside .type-section .type-list li button .fa-bolt-lightning {
+    color: var(--type-electric);
+}
+
+body #big-container aside .type-section .type-list li button {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    padding: 5px;
+
+    border: none;
+    background-color: white;
+}
+
+body #big-container aside .type-section .show-more-types {
+    align-self: self-end;
+    margin-right: 50%;
+}
+
+body #big-container aside .filter-section {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+body #big-container aside .filter-section .filter-options {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+body #big-container aside .filter-section .filter-options li button {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+
+    background-color: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+}
+
+body #big-container aside .filter-section .filter-actions {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+body #big-container aside .filter-section .filter-actions button {
+    flex: 1;
+    padding: 5px;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-weight: bold;
 }
