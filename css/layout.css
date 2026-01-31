@@ -1,0 +1,79 @@
+body #big-container header {
+    width: 100%;
+    background-color: white;
+    box-shadow: var(--shadow);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+body #big-container header .title-search-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+body #big-container header .title-search-bar .title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+body #big-container header .title-search-bar .search-bar {
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+body #big-container header .title-search-bar .search-bar input {
+    width: 300px;
+    padding-block: 8px;
+    padding-left: 40px;
+    border-radius: var(--radius-sm);
+}
+
+body #big-container header .title-search-bar .search-bar span {
+    position: absolute;
+    left: 10px;
+}
+
+body #big-container header .title-search-bar .title img {
+    width: 50px;
+    aspect-ratio: 1/1;
+}
+
+body #big-container header #options {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+body #big-container header #options button {
+    color: var(--text);
+    background-color: var(--bg);
+    padding: 8px;
+    border: 2px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-weight: bold;
+}
+
+body #big-container header #options .setting {
+    font-size: large;
+}
+
+body #big-container aside {
+    border-bottom-left-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+}
