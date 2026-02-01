@@ -200,6 +200,16 @@ body #big-container aside .type-section .show-more-types.expanded i {
     transform: rotate(180deg);
 }
 
+body #big-container aside .type-section .type-list .type-btn.active {
+  transform: scale(1.05);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+body #big-container aside .type-section .type-list .type-btn:hover {
+  opacity: 0.8;
+}
+
 
 body #big-container aside .filter-section {
     width: 100%;

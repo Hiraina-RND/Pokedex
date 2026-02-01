@@ -49,31 +49,31 @@
                 <h2 class="type">Type</h2>
                 <ul class="type-list">
                     <li class="all-type">
-                        <button>
+                        <button class="type-btn" data-type="all">
                             <i class="fa-solid fa-bars"></i>
                             <span>All</span>
                         </button>
                     </li>
                     <li class="grass-type">
-                        <button>
+                        <button class="type-btn" data-type="grass">
                             <i class="fa-solid fa-leaf"></i>
                             <span>Grass</span>
                         </button>
                     </li>
                     <li class="fire-type">
-                        <button>
+                        <button class="type-btn" data-type="fire">
                             <i class="fa-solid fa-fire"></i>
                             <span>Fire</span>
                         </button>
                     </li>
                     <li class="water-type">
-                        <button>
+                        <button class="type-btn" data-type="water">
                             <i class="fa-solid fa-droplet"></i>
                             <span>Water</span>
                         </button>
                     </li>
                     <li class="electric-type">
-                        <button>
+                        <button class="type-btn" data-type="electric">
                             <i class="fa-solid fa-bolt-lightning"></i>
                             <span>Electric</span>
                         </button>
@@ -105,7 +105,9 @@
                 </div>
             </div>
         </aside>
-        <main></main>
+        <main>
+            <div class="pokemon-container"></div>
+        </main>
         <footer></footer>
     </div>
     <script type="module" src="js/main.js"></script>

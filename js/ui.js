@@ -8,9 +8,11 @@ const createElement = (tag, options = {}) => {
     return element;
 };
 
-const createTypeButton = (liClassName = "", iconClassName = "", typeName = "") => {
+const createTypeButton = (liClassName = "", iconClassName = "", typeName = "", dataType = "") => {
     const li = createElement("li", { className: liClassName });
     const button = document.createElement("button");
+    button.classList.add("type-btn");
+    button.dataset.type = dataType;
     const icon = createElement("i", { className: iconClassName });
     const span = createElement("span", { text: typeName });
 
@@ -21,25 +23,25 @@ const createTypeButton = (liClassName = "", iconClassName = "", typeName = "") =
 };
 
 const MORE_TYPES = [
-    ["ice-type", "fa-solid fa-snowflake", "Ice"],
-    ["poison-type", "fa-solid fa-flask", "Poison"],
-    ["ground-type", "fa-solid fa-mountain", "Ground"],
-    ["psychic-type", "fa-solid fa-eye", "Psychic"],
-    ["bug-type", "fa-solid fa-bug", "Bug"],
-    ["rock-type", "fa-solid fa-gem", "Rock"],
-    ["ghost-type", "fa-solid fa-ghost", "Ghost"],
-    ["dark-type", "fa-solid fa-moon", "Dark"],
-    ["steel-type", "fa-solid fa-shield", "Steel"],
-    ["fairy-type", "fa-solid fa-wand-sparkles", "Fairy"],
-    ["dragon-type", "fa-solid fa-dragon", "Dragon"]
+    ["ice-type", "fa-solid fa-snowflake", "Ice", "ice"],
+    ["poison-type", "fa-solid fa-flask", "Poison", "poison"],
+    ["ground-type", "fa-solid fa-mountain", "Ground", "ground"],
+    ["psychic-type", "fa-solid fa-eye", "Psychic", "psychic"],
+    ["bug-type", "fa-solid fa-bug", "Bug", "bug"],
+    ["rock-type", "fa-solid fa-gem", "Rock", "rock"],
+    ["ghost-type", "fa-solid fa-ghost", "Ghost", "ghost"],
+    ["dark-type", "fa-solid fa-moon", "Dark", "dark"],
+    ["steel-type", "fa-solid fa-shield", "Steel", "steel"],
+    ["fairy-type", "fa-solid fa-wand-sparkles", "Fairy", "fairy"],
+    ["dragon-type", "fa-solid fa-dragon", "Dragon", "dragon"]
 ];
 
 export const showMoreTypes = () => {
     const listContainer = document.querySelector(".type-list");
 
-    MORE_TYPES.forEach(([className, icon, label]) => {
+    MORE_TYPES.forEach(([className, icon, label, dataType]) => {
         listContainer.append(
-            createTypeButton(className, icon, label)
+            createTypeButton(className, icon, label, dataType)
         );
     });
 };
@@ -52,3 +54,26 @@ export const removeMoreTypes = () => {
         if (element) element.remove();
     });
 };
+
+export function setActiveType(type) {
+  const buttons = document.querySelectorAll(".type-btn");
+  buttons.forEach(btn => {
+    if (btn.dataset.type === type) {
+        btn.classList.add("active");
+    } else {
+        btn.classList.remove("active");
+    }
+  });
+}
+
+export function renderPokemons(pokemons) {
+  const container = document.querySelector(".pokemon-container");
+  container.innerHTML = "";
+
+  pokemons.forEach(pokemon => {
+    const card = document.createElement("div");
+    card.className = "pokemon-card";
+    card.textContent = pokemon.name;
+    container.appendChild(card);
+  });
+}
