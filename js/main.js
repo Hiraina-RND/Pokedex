@@ -3,7 +3,6 @@ import { fetchPokemonsByType } from "./data.js";
 import { showMoreTypes, removeMoreTypes } from "./ui.js";
 
 const buttonToShowMoreTypes = document.querySelector(".show-more-types");
-const typeList = document.querySelector(".type-list");
 const buttons = document.querySelectorAll(".type-btn");
 let currentType = "all";
 
