@@ -8,6 +8,8 @@ body #big-container header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    border-top-left-radius: var(--radius-sm);
+    border-top-right-radius: var(--radius-sm);
 }
 
 body #big-container header .title-search-bar {
