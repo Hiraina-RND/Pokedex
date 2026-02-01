@@ -126,6 +126,50 @@ body #big-container aside .type-section .type-list li button .fa-bolt-lightning 
     color: var(--type-electric);
 }
 
+body #big-container aside .type-section .type-list li button .fa-snowflake {
+    color: var(--type-ice);
+}
+
+body #big-container aside .type-section .type-list li button .fa-flask {
+    color: var(--type-poison);
+}
+
+body #big-container aside .type-section .type-list li button .fa-mountain {
+    color: var(--type-ground);
+}
+
+body #big-container aside .type-section .type-list li button .fa-eye {
+    color: var(--type-psychic);
+}
+
+body #big-container aside .type-section .type-list li button .fa-bug {
+    color: var(--type-bug);
+}
+
+body #big-container aside .type-section .type-list li button .fa-gem {
+    color: var(--type-rock);
+}
+
+body #big-container aside .type-section .type-list li button .fa-ghost {
+    color: var(--type-ghost);
+}
+
+body #big-container aside .type-section .type-list li button .fa-moon {
+    color: var(--type-dark);
+}
+
+body #big-container aside .type-section .type-list li button .fa-shield {
+    color: var(--type-steel);
+}
+
+body #big-container aside .type-section .type-list li button .fa-wand-sparkles {
+    color: var(--type-fairy);
+}
+
+body #big-container aside .type-section .type-list li button .fa-dragon {
+    color: var(--type-dragon);
+}
+
 body #big-container aside .type-section .type-list li button {
     width: 100%;
 
@@ -141,9 +185,21 @@ body #big-container aside .type-section .type-list li button {
 }
 
 body #big-container aside .type-section .show-more-types {
-    align-self: self-end;
-    margin-right: 50%;
+    align-self: center;
+
+    border: none;
+    padding: 3px;
+    border-radius: 10px;
 }
+
+body #big-container aside .type-section .show-more-types i {
+    transition: transform 0.3s ease;
+}
+
+body #big-container aside .type-section .show-more-types.expanded i {
+    transform: rotate(180deg);
+}
+
 
 body #big-container aside .filter-section {
     width: 100%;
