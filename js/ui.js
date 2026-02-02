@@ -74,6 +74,10 @@ export function renderPokemons(pokemons) {
     const card = document.createElement("div");
     card.className = "pokemon-card";
 
+    const pokemonId = document.createElement("span");
+    pokemonId.className = "pokemon-id";
+    pokemonId.textContent =`#${pokemon.id}`;
+
     const img = document.createElement("img");
     img.src = pokemon.image;
     img.alt = pokemon.name;
@@ -91,7 +95,7 @@ export function renderPokemons(pokemons) {
       types.appendChild(span);
     });
 
-    card.append(img, name, types);
+    card.append(pokemonId, img, name, types);
     container.appendChild(card);
   });
 }

@@ -31,6 +31,7 @@ async function fetchPokemonDetails(pokemonUrl) {
   const data = await response.json();
 
   return {
+    id : data.id,
     name : data.name,
     image : data.sprites.other["official-artwork"].front_default,
     types : data.types.map(t => t.type.name)
