@@ -73,7 +73,25 @@ export function renderPokemons(pokemons) {
   pokemons.forEach(pokemon => {
     const card = document.createElement("div");
     card.className = "pokemon-card";
-    card.textContent = pokemon.name;
+
+    const img = document.createElement("img");
+    img.src = pokemon.image;
+    img.alt = pokemon.name;
+
+    const name = document.createElement("h3");
+    name.textContent = pokemon.name;
+
+    const types = document.createElement("div");
+    types.className = "pokemon-types";
+
+    pokemon.types.forEach(type => {
+      const span = document.createElement("span");
+      span.className = `type ${type}`;
+      span.textContent = type;
+      types.appendChild(span);
+    });
+
+    card.append(img, name, types);
     container.appendChild(card);
   });
 }
