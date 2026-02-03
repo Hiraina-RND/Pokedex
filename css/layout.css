@@ -172,6 +172,14 @@ body #big-container aside .type-section .type-list li button .fa-dragon {
     color: var(--type-dragon);
 }
 
+body #big-container aside .type-section .type-list li button .fa-hand-fist {
+    color: var(--type-fighting);
+}
+
+body #big-container aside .type-section .type-list li button .fa-feather {
+    color: var(--type-flying);
+}
+
 body #big-container aside .type-section .type-list li button {
     width: 100%;
 

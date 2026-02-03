@@ -1,29 +1,15 @@
 export async function fetchPokemonsByType(type) {
-  let url;
-
-  if (type === "all") {
-    url = "https://pokeapi.co/api/v2/pokemon?limit=100";
-  } else {
-    url = `https://pokeapi.co/api/v2/type/${type}`;
-  }
+  let url = `https://pokeapi.co/api/v2/type/${type}`;
 
   const response = await fetch(url);
   const data = await response.json();
 
-  const basicsPokemons =  normalizePokemons(data, type);
+  const basicsPokemons =  data.pokemon.map(p => p.pokemon);
   const detailedPokemos = await Promise.all(
     basicsPokemons.map(pokemon => fetchPokemonDetails(pokemon.url))
   );
 
   return detailedPokemos;
-}
-
-function normalizePokemons(data, type) {
-  if (type === "all") {
-    return data.results;
-  }
-
-  return data.pokemon.map(p => p.pokemon);
 }
 
 async function fetchPokemonDetails(pokemonUrl) {

@@ -1,5 +1,6 @@
 :root {
   /* Types */
+  --type-normal: #f6f7f9;
   --type-grass: #4ade80;
   --type-fire: #fb7185;
   --type-water: #60a5fa;
@@ -15,6 +16,9 @@
   --type-dragon: #818cf8;
   --type-dark: #6b7280;
   --type-steel: #94a3b8;
+  --type-fighting: #f97316;
+  --type-flying: #bae6fd;
+
 
   /* States */
   --success: #22c55e;

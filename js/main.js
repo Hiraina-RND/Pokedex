@@ -1,7 +1,7 @@
 import { setActiveType, renderPokemons, showMoreTypes, removeMoreTypes } from "./ui.js";
 import { fetchPokemonsByType } from "./data.js";
 
-let currentType = "all";
+let currentType = "normal";
 const buttonToShowMoreTypes = document.querySelector(".show-more-types");
 
 function handleTypeClick(btn) {

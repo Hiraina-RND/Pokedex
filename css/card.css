@@ -61,12 +61,85 @@ body #big-container main .pokemon-container .pokemon-card .pokemon-types {
 }
 
 body #big-container main .pokemon-container .pokemon-card .pokemon-types .type {
+  color: var(--text);
   padding: 4px 8px;
   border-radius: 8px;
   font-size: 12px;
   font-weight: bold;
-  background: var(--bg);
   box-shadow: var(--shadow);
+}
+
+body #big-container main .pokemon-container .pokemon-card .pokemon-types .type.normal {
+  background: var(--type-normal);
+}
+
+body #big-container main .pokemon-container .pokemon-card .pokemon-types .type.grass {
+  background: var(--type-grass);
+}
+
+body #big-container main .pokemon-container .pokemon-card .pokemon-types .type.fire {
+  background: var(--type-fire);
+}
+
+body #big-container main .pokemon-container .pokemon-card .pokemon-types .type.water {
+  background: var(--type-water);
+}
+
+body #big-container main .pokemon-container .pokemon-card .pokemon-types .type.electric {
+  background: var(--type-electric);
+}
+
+body #big-container main .pokemon-container .pokemon-card .pokemon-types .type.ice {
+  background: var(--type-ice);
+}
+
+body #big-container main .pokemon-container .pokemon-card .pokemon-types .type.fairy {
+  background: var(--type-fairy);
+}
+
+body #big-container main .pokemon-container .pokemon-card .pokemon-types .type.ghost {
+  background: var(--type-ghost);
+}
+
+body #big-container main .pokemon-container .pokemon-card .pokemon-types .type.poison {
+  background: var(--type-poison);
+}
+
+body #big-container main .pokemon-container .pokemon-card .pokemon-types .type.psychic {
+  background: var(--type-psychic);
+}
+
+body #big-container main .pokemon-container .pokemon-card .pokemon-types .type.rock {
+  background: var(--type-rock);
+}
+
+body #big-container main .pokemon-container .pokemon-card .pokemon-types .type.ground {
+  background: var(--type-ground);
+}
+
+body #big-container main .pokemon-container .pokemon-card .pokemon-types .type.bug {
+  background: var(--type-bug);
+}
+
+body #big-container main .pokemon-container .pokemon-card .pokemon-types .type.dragon {
+  background: var(--type-dragon);
+}
+
+body #big-container main .pokemon-container .pokemon-card .pokemon-types .type.dark {
+  background: var(--type-dark);
+  color: white;
+}
+
+body #big-container main .pokemon-container .pokemon-card .pokemon-types .type.steel {
+  background: var(--type-steel);
+}
+
+body #big-container main .pokemon-container .pokemon-card .pokemon-types .type.fighting {
+  background: var(--type-fighting);
+}
+
+body #big-container main .pokemon-container .pokemon-card .pokemon-types .type.flying {
+  background: var(--type-flying);
 }
 
 @media (max-width: 480px) {
