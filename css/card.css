@@ -24,6 +24,7 @@ body #big-container main .pokemon-container {
 
 body #big-container main .pokemon-container .pokemon-card {
   position: relative;
+  max-width: 260px;
   min-width: 180px;
   flex: 1 1 220px;
   aspect-ratio: 1/1;
