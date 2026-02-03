@@ -1,3 +1,14 @@
+body main .radom-pokemon-display {
+  width: 100%;
+  height: auto;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background-color: var(--card);
+}
+
 body #big-container main .pokemon-container {
   width: 100%;
   height: auto;
@@ -13,8 +24,8 @@ body #big-container main .pokemon-container {
 
 body #big-container main .pokemon-container .pokemon-card {
   position: relative;
+  min-width: 180px;
   flex: 1 1 220px;
-  min-width: 250px;
   aspect-ratio: 1/1;
   padding: 10px;
   box-shadow: var(--shadow);
@@ -143,11 +154,8 @@ body #big-container main .pokemon-container .pokemon-card .pokemon-types .type.f
 }
 
 @media (max-width: 480px) {
-  body #big-container main .pokemon-container {
-    padding-inline: 10px;
-  }
-
-  body #big-container main .pokemon-container .pokemon-card {
-    max-width: 100%;
+  body #big-container main .pokemon-container .pokemon-card img {
+    width: 150px;
+    aspect-ratio: 1/1;
   }
 }

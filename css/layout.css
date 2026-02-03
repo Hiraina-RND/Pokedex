@@ -1,4 +1,6 @@
 body #big-container header {
+    z-index: 10;
+    position: relative;
     width: 100%;
     background-color: white;
     box-shadow: var(--shadow);
@@ -10,6 +12,27 @@ body #big-container header {
     padding: 20px;
     border-top-left-radius: var(--radius-sm);
     border-top-right-radius: var(--radius-sm);
+}
+
+body #big-container header .btn-to-show-aside {
+    display: none;
+    z-index: 20;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translateY(100%);
+
+    border: none;
+    padding: 10px 10px;
+    border-top-right-radius: var(--radius-sm);
+    border-bottom-right-radius: var(--radius-sm);
+    
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgba(0, 0, 0, 0.6);
+}
+
+body #big-container header .btn-to-show-aside i {
+    font-size: x-large;
 }
 
 body #big-container header .title-search-bar {
@@ -39,10 +62,11 @@ body #big-container header .title-search-bar .search-bar {
 
 body #big-container header .title-search-bar .search-bar input {
     width: 300px;
+    min-width: 0;
     padding-block: 8px;
     padding-left: 40px;
     border: 2px solid var(--border);
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-lg);
 }
 
 body #big-container header .title-search-bar .search-bar span {
@@ -56,6 +80,7 @@ body #big-container header .title-search-bar .title img {
 }
 
 body #big-container header #options {
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -63,17 +88,39 @@ body #big-container header #options {
     gap: 20px;
 }
 
-body #big-container header #options button {
-    color: var(--text);
-    background-color: var(--bg);
+body #big-container header #options .all-pokemons-btn {
+    background-color: transparent;
+    color: var(--type-water);
+    border: 1px solid var(--type-water);
+}
+
+body #big-container header #options .all-pokemons-btn,
+body #big-container header #options .favories-pokemons-btn {
+    width: 120px;
+    min-width: 0;
     padding: 8px;
-    border: 2px solid var(--border);
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-lg);
+    font-size: small;
     font-weight: bold;
+    box-shadow: var(--shadow);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+body #big-container header #options .favories-pokemons-btn {
+    border: none;
+    background-color: var(--type-grass);
 }
 
 body #big-container header #options .setting {
     font-size: large;
+    border: 2px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 5px;
+    background-color: transparent;
 }
 
 body #big-container aside {
@@ -117,7 +164,7 @@ body #big-container aside .type-section .type-list li button .fa-leaf {
 }
 
 body #big-container aside .type-section .type-list li button .fa-fire {
-    color: var(--type-fire  );
+    color: var(--type-fire);
 }
 
 body #big-container aside .type-section .type-list li button .fa-droplet {
@@ -211,13 +258,13 @@ body #big-container aside .type-section .show-more-types.expanded i {
 }
 
 body #big-container aside .type-section .type-list .type-btn.active {
-  transform: scale(1.05);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
+    transform: scale(1.05);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
 }
 
 body #big-container aside .type-section .type-list .type-btn:hover {
-  opacity: 0.8;
+    opacity: 0.8;
 }
 
 
@@ -269,4 +316,59 @@ body #big-container aside .filter-section .filter-actions button {
     border: 1px solid var(--border);
     border-radius: var(--radius-sm);
     font-weight: bold;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    body #big-container header {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    body #big-container header * {
+        min-width: 0;
+    }
+
+    body #big-container header .btn-to-show-aside {
+        display: block;
+    }
+
+    body #big-container header .title-search-bar {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    body #big-container header .title-search-bar .title h1 {
+        display: none;
+    }
+
+    body #big-container header .title-search-bar {
+        gap: 0;
+    }
+
+    body #big-container header .title-search-bar .search-bar input {
+        width: auto;
+        min-width: 0;
+    }
+
+    body #big-container header #options {
+        width: 100%;
+    }
+
+    body #big-container header #options .btn-to-show-aside {
+        display: block;
+    }
+
+    body #big-container header #options .all-pokemons-btn,
+    body #big-container header #options .favories-pokemons-btn {
+        flex: 1;
+        width: auto;
+        padding: 6px;
+    }
+
+    body #big-container header #options .setting {
+        font-size: smaller;
+    }
 }

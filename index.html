@@ -37,12 +37,21 @@
                 </div>
             </div>
             <div id="options">
-                <button class="all-pokemons-btn">All Pokémon</button>
-                <button class="favories-pokemons-btn">Favories</button>
-                <span class="setting">
-                    <i class="fa-solid fa-gear"></i>
-                </span>
+                <button class="theme-toggle-btn setting">
+                    <i class="fa-regular fa-moon"></i>
+                </button>
+                <button class="all-pokemons-btn">
+                    <i class="fa-solid fa-list"></i>
+                    <span>All</span>
+                </button>
+                <button class="favories-pokemons-btn">
+                    <i class="fa-regular fa-heart"></i>
+                    <span>Favories</span>
+                </button>
             </div>
+            <button class="btn-to-show-aside">
+                <i class="fa-solid fa-circle-chevron-right"></i>
+            </button>
         </header>
         <aside id="aside">
             <div class="type-section">
@@ -106,7 +115,13 @@
             </div>
         </aside>
         <main>
-            <div class="pokemon-container"></div>
+            <div class="radom-pokemon-display">
+                Affichage du pokemon selectionné aleatoirement
+            </div>
+            <div class="pokemon-list">
+                <h2>Les Pokemons</h2>
+                <div class="pokemon-container"></div>
+            </div>
         </main>
         <footer></footer>
     </div>
