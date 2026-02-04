@@ -23,8 +23,8 @@ body .radom-pokemon-display .pokemon-card.hero:hover {
 body .radom-pokemon-display .pokemon-card.hero img {
   width: 250px;
   height: auto;
-  border-radius: var(--radius-sm);
-  box-shadow: var(--shadow);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-md);
 }
 
 body .radom-pokemon-display .pokemon-info {

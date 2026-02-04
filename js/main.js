@@ -9,9 +9,9 @@ function handleTypeClick(btn) {
         const type = btn.dataset.type;
         if (type === currentType) return;
 
+        hideAside();
         currentType = type;
         await updatePokemons(type);
-        hideAside();
     });
 }
 
