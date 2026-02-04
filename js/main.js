@@ -1,5 +1,5 @@
-import { setActiveType, renderPokemons, showMoreTypes, removeMoreTypes, toggleAside, hideAside } from "./ui.js";
-import { fetchPokemonsByType } from "./data.js";
+import { setActiveType, renderPokemons, showMoreTypes, removeMoreTypes, toggleAside, hideAside, renderRandomPokemon } from "./ui.js";
+import { fetchPokemonsByType, fetchRandomPokemon } from "./data.js";
 
 let currentType = "normal";
 const buttonToShowMoreTypes = document.querySelector(".show-more-types");
@@ -11,6 +11,7 @@ function handleTypeClick(btn) {
 
         currentType = type;
         await updatePokemons(type);
+        hideAside();
     });
 }
 
@@ -23,6 +24,11 @@ async function updatePokemons(type) {
     setActiveType(type);
     const pokemons = await fetchPokemonsByType(type);
     renderPokemons(pokemons);
+}
+
+async function showRandomPokemonOnLoad() {
+    const randomPokemon = await fetchRandomPokemon();
+    renderRandomPokemon(randomPokemon);
 }
 
 buttonToShowMoreTypes.addEventListener("click", () => {
@@ -55,5 +61,6 @@ aside.addEventListener("click", (event) => {
   event.stopPropagation();
 });
 
+showRandomPokemonOnLoad();
 initTypeButtons();
 updatePokemons(currentType);

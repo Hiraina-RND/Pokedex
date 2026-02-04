@@ -23,3 +23,23 @@ async function fetchPokemonDetails(pokemonUrl) {
     types : data.types.map(t => t.type.name)
   }
 }
+
+
+export async function fetchRandomPokemon() {
+  const randomId = Math.floor(Math.random() * 898) + 1;
+  const url = `https://pokeapi.co/api/v2/pokemon/${randomId}`;
+
+  const response = await fetch(url);
+  const data = await response.json();
+
+  return {
+    id: data.id,
+    name: data.name,
+    image: data.sprites.other["official-artwork"].front_default,
+    types: data.types.map(t => t.type.name),
+    height: data.height,
+    weight: data.weight,
+    abilities: data.abilities.map(a => a.ability.name),
+    stats: data.stats.map(s => ({ name: s.stat.name, value: s.base_stat }))
+  };
+}

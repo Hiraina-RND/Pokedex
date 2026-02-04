@@ -339,7 +339,6 @@ body #big-container aside .filter-section .filter-actions .clear-filters {
     color: white;
 }
 
-/* Mobile */
 @media (max-width: 480px) {
     body #big-container header {
         flex-direction: column;

@@ -102,6 +102,56 @@ export function renderPokemons(pokemons) {
   });
 }
 
+export function renderRandomPokemon(pokemon) {
+  const container = document.querySelector(".radom-pokemon-display");
+  container.innerHTML = "";
+
+  const card = document.createElement("div");
+  card.className = "pokemon-card hero";
+
+  const img = document.createElement("img");
+  img.src = pokemon.image;
+  img.alt = pokemon.name;
+
+  const info = document.createElement("div");
+  info.className = "pokemon-info";
+
+  const name = document.createElement("h2");
+  name.textContent = `${pokemon.name} (#${pokemon.id})`;
+
+  const types = document.createElement("div");
+  types.className = "pokemon-types";
+  pokemon.types.forEach(type => {
+    const span = document.createElement("span");
+    span.className = `type ${type}`;
+    span.textContent = type;
+    types.appendChild(span);
+  });
+
+  const stats = document.createElement("div");
+  stats.className = "pokemon-stats";
+  pokemon.stats.forEach(stat => {
+    const statRow = document.createElement("div");
+    statRow.className = "stat-row";
+
+    const label = document.createElement("span");
+    label.textContent = stat.name;
+    const value = document.createElement("span");
+    value.textContent = stat.value;
+
+    statRow.append(label, value);
+    stats.appendChild(statRow);
+  });
+
+  const abilities = document.createElement("p");
+  abilities.className = "pokemon-abilities";
+  abilities.textContent = `Abilities: ${pokemon.abilities.join(", ")}`;
+
+  info.append(name, types, abilities, stats);
+  card.append(img, info);
+  container.appendChild(card);
+}
+
 const aside = document.querySelector("#aside");
 const btnToShowAside = document.querySelector(".btn-to-show-aside");
 

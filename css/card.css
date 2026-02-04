@@ -1,30 +1,98 @@
 body main .radom-pokemon-display {
   width: 100%;
-  height: auto;
-  padding: 15px;
-  margin-bottom: 20px;
+}
+
+body .radom-pokemon-display .pokemon-card.hero {
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+  padding: 20px;
+  border-radius: var(--radius-md);
   box-shadow: var(--shadow);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
   background-color: var(--card);
+  transition: transform 0.2s ease-in-out;
+}
+
+body .radom-pokemon-display .pokemon-card.hero:hover {
+  transform: scale(1.02);
+}
+
+body .radom-pokemon-display .pokemon-card.hero img {
+  width: 250px;
+  height: auto;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
+}
+
+body .radom-pokemon-display .pokemon-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+body .radom-pokemon-display .pokemon-info h2 {
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+}
+
+body .radom-pokemon-display .pokemon-types {
+  display: flex;
+  gap: 10px;
+}
+
+body .radom-pokemon-display .pokemon-types .type {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 14px;
+  color: var(--text);
+  box-shadow: var(--shadow);
+}
+
+body .radom-pokemon-display .pokemon-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+body .radom-pokemon-display .pokemon-stats .stat-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+body .radom-pokemon-display .pokemon-abilities {
+  font-size: 14px;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+body #big-container main .pokemon-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
 }
 
 body #big-container main .pokemon-container {
   width: 100%;
   height: auto;
+
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 10px;
-  padding-inline: 5px;
-  padding-block: 15px;
 }
 
 body #big-container main .pokemon-container .pokemon-card {
   position: relative;
-  max-width: 260px;
+  max-width: 240px;
   min-width: 180px;
   flex: 1 1 220px;
   aspect-ratio: 1/1;
@@ -81,82 +149,36 @@ body #big-container main .pokemon-container .pokemon-card .pokemon-types .type {
   box-shadow: var(--shadow);
 }
 
-body #big-container main .pokemon-container .pokemon-card .pokemon-types .type.normal {
-  background: var(--type-normal);
-}
-
-body #big-container main .pokemon-container .pokemon-card .pokemon-types .type.grass {
-  background: var(--type-grass);
-}
-
-body #big-container main .pokemon-container .pokemon-card .pokemon-types .type.fire {
-  background: var(--type-fire);
-}
-
-body #big-container main .pokemon-container .pokemon-card .pokemon-types .type.water {
-  background: var(--type-water);
-}
-
-body #big-container main .pokemon-container .pokemon-card .pokemon-types .type.electric {
-  background: var(--type-electric);
-}
-
-body #big-container main .pokemon-container .pokemon-card .pokemon-types .type.ice {
-  background: var(--type-ice);
-}
-
-body #big-container main .pokemon-container .pokemon-card .pokemon-types .type.fairy {
-  background: var(--type-fairy);
-}
-
-body #big-container main .pokemon-container .pokemon-card .pokemon-types .type.ghost {
-  background: var(--type-ghost);
-}
-
-body #big-container main .pokemon-container .pokemon-card .pokemon-types .type.poison {
-  background: var(--type-poison);
-}
-
-body #big-container main .pokemon-container .pokemon-card .pokemon-types .type.psychic {
-  background: var(--type-psychic);
-}
-
-body #big-container main .pokemon-container .pokemon-card .pokemon-types .type.rock {
-  background: var(--type-rock);
-}
-
-body #big-container main .pokemon-container .pokemon-card .pokemon-types .type.ground {
-  background: var(--type-ground);
-}
-
-body #big-container main .pokemon-container .pokemon-card .pokemon-types .type.bug {
-  background: var(--type-bug);
-}
-
-body #big-container main .pokemon-container .pokemon-card .pokemon-types .type.dragon {
-  background: var(--type-dragon);
-}
-
-body #big-container main .pokemon-container .pokemon-card .pokemon-types .type.dark {
-  background: var(--type-dark);
-  color: white;
-}
-
-body #big-container main .pokemon-container .pokemon-card .pokemon-types .type.steel {
-  background: var(--type-steel);
-}
-
-body #big-container main .pokemon-container .pokemon-card .pokemon-types .type.fighting {
-  background: var(--type-fighting);
-}
-
-body #big-container main .pokemon-container .pokemon-card .pokemon-types .type.flying {
-  background: var(--type-flying);
-}
+.type.normal { background: var(--type-normal); }
+.type.grass { background: var(--type-grass); }
+.type.fire { background: var(--type-fire); }
+.type.water { background: var(--type-water); }
+.type.electric { background: var(--type-electric); }
+.type.ice { background: var(--type-ice); }
+.type.fairy { background: var(--type-fairy); }
+.type.ghost { background: var(--type-ghost); }
+.type.poison { background: var(--type-poison); }
+.type.psychic { background: var(--type-psychic); }
+.type.rock { background: var(--type-rock); }
+.type.ground { background: var(--type-ground); }
+.type.bug { background: var(--type-bug); }
+.type.dragon { background: var(--type-dragon); color:white; }
+.type.dark { background: var(--type-dark); color:white; }
+.type.steel { background: var(--type-steel); }
+.type.fighting { background: var(--type-fighting); color:white; }
+.type.flying { background: var(--type-flying); }
 
 @media (max-width: 480px) {
   body #big-container main .pokemon-container .pokemon-card img {
     width: 150px;
     aspect-ratio: 1/1;
+  }
+
+  body #big-container main .pokemon-container .pokemon-card {
+    max-width: none;
+  }
+
+  body .radom-pokemon-display .pokemon-card.hero {
+    flex-direction: column;
   }
 }
