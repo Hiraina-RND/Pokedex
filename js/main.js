@@ -1,4 +1,4 @@
-import { setActiveType, renderPokemons, showMoreTypes, removeMoreTypes } from "./ui.js";
+import { setActiveType, renderPokemons, showMoreTypes, removeMoreTypes, toggleAside, hideAside } from "./ui.js";
 import { fetchPokemonsByType } from "./data.js";
 
 let currentType = "normal";
@@ -36,6 +36,23 @@ buttonToShowMoreTypes.addEventListener("click", () => {
         removeMoreTypes();
         buttonToShowMoreTypes.classList.remove("expanded");
     }
+});
+
+const btnToShowAside = document.querySelector(".btn-to-show-aside");
+btnToShowAside.addEventListener("click", (event) => {
+    event.stopPropagation();
+    toggleAside();
+});
+
+document.addEventListener("click", (event) => {
+    if (!aside.contains(event.target)) {
+        hideAside();
+    }
+});
+
+const aside = document.querySelector("#aside");
+aside.addEventListener("click", (event) => {
+  event.stopPropagation();
 });
 
 initTypeButtons();

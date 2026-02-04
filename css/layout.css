@@ -31,6 +31,15 @@ body #big-container header .btn-to-show-aside {
     color: rgba(0, 0, 0, 0.6);
 }
 
+body #big-container header .btn-to-show-aside.movedRight {
+    transform: translate(calc(260px - 20px), 100%);
+}
+
+body #big-container header .btn-to-show-aside.movedRight i {
+    transition: transform 0.3s ease;
+    transform: rotate(180deg);
+}
+
 body #big-container header .btn-to-show-aside i {
     font-size: x-large;
 }

@@ -101,3 +101,16 @@ export function renderPokemons(pokemons) {
     container.appendChild(card);
   });
 }
+
+const aside = document.querySelector("#aside");
+const btnToShowAside = document.querySelector(".btn-to-show-aside");
+
+export function toggleAside() {
+  const isVisible = aside.classList.toggle("visible");
+  btnToShowAside.classList.toggle("movedRight", isVisible);
+}
+
+export function hideAside() {
+  aside.classList.remove("visible");
+  btnToShowAside.classList.remove("movedRight");
+}
