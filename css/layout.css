@@ -112,7 +112,8 @@ body #big-container header #options .favories-pokemons-btn {
 
 body #big-container header #options .favories-pokemons-btn {
     border: none;
-    background-color: var(--type-grass);
+    color: white;
+    background-color: var(--type-water);
 }
 
 body #big-container header #options .setting {
