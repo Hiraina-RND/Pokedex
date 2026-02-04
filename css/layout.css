@@ -100,7 +100,7 @@ body #big-container header #options {
 body #big-container header #options .all-pokemons-btn {
     background-color: transparent;
     color: var(--type-water);
-    border: 1px solid var(--type-water);
+    border: 2px solid var(--type-water);
 }
 
 body #big-container header #options .all-pokemons-btn,
