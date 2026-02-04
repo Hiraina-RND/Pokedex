@@ -1,5 +1,4 @@
 :root {
-  /* Types */
   --type-normal: #707070;
   --type-grass: #4ade80;
   --type-fire: #fb7185;
@@ -19,70 +18,49 @@
   --type-fighting: #f97316;
   --type-flying: #bae6fd;
 
-
-  /* States */
-  --success: #22c55e;
-  --danger: #ef4444;
-  --warning: #facc15;
-  --info: #38bdf8;
-  --favorite: #fb7185;
-
-  /* Radius */
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 18px;
 }
 
-/* DARK MODE */
 body.dark {
-  /* Backgrounds */
+  --header-bg: #14171d;
+  --aside-bg: #14171d;
+  --main-bg: #0f1115;
   --bg: #0f1115;
-  --bg-soft: #14171d;
   --card: #1b1e24;
-  --card-hover: #222632;
 
-  /* Text */
   --text: #f1f1f1;
   --text-muted: #9aa0ab;
-  --text-soft: #c7cbd4;
+  --text-invert: #000000;
 
-  /* Borders */
   --border: #2a2d35;
-  --divider: #1f222a;
 
-  /* Shadow */
+  --input-bg: #15181f;
+
   --shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
 
-  /* UI */
-  --input-bg: #15181f;
-  --input-border: #2a2d35;
-  --button-bg: #1f222a;
-  --button-hover: #2a2f3a;
+  --stat-green-start: #22c55e;
+  --stat-green-end: #16a34a;
 }
 
-/* LIGHT MODE */
 body:not(.dark) {
-  /* Backgrounds */
+  --header-bg: #ffffff;
+  --aside-bg: #ffffff;
+  --main-bg: #ffffff;
   --bg: #f6f7f9;
-  --bg-soft: #ffffff;
   --card: #ffffff;
-  --card-hover: #f0f1f4;
 
-  /* Text */
   --text: #1b1d23;
   --text-muted: #6b7280;
-  --text-soft: #374151;
+  --text-invert: #ffffff;
 
-  /* Borders */
   --border: #e4e6eb;
-  --divider: #edeff3;
 
-  /* Shadow */
+  --input-bg: #ffffff;
+
   --shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 
-  /* UI */
-  --input-bg: #ffffff;
-  --input-border: #d1d5db;
-  --button-bg: #f3f4f6;
-  --button-hover: #e5e7eb;
+  --stat-green-start: #4ade80;
+  --stat-green-end: #22c55e;
 }

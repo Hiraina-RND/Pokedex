@@ -32,6 +32,7 @@ body .radom-pokemon-display .pokemon-card.hero .pokemon-info {
 body .radom-pokemon-display .pokemon-card.hero .pokemon-info h2 {
   font-size: 1.8rem;
   text-align: center;
+  color: var(--text);
 }
 
 body .radom-pokemon-display .pokemon-card.hero .pokemon-info .pokemon-types {
@@ -44,7 +45,7 @@ body .radom-pokemon-display .pokemon-card.hero .pokemon-info .pokemon-types .typ
   border-radius: 12px;
   font-weight: bold;
   font-size: 14px;
-  color: white;
+  color: var(--text-invert);
   box-shadow: var(--shadow);
 }
 
@@ -67,7 +68,7 @@ body .radom-pokemon-display .pokemon-card.hero .pokemon-info .pokemon-stats .sta
   font-weight: bold;
   background-color: var(--bg);
   border-radius: var(--radius-sm);
-
+  color: var(--text);
   text-align: start;
   padding-left: 10%;
 }
@@ -81,7 +82,11 @@ body .radom-pokemon-display .pokemon-card.hero .pokemon-info .pokemon-stats .sta
 
 body .radom-pokemon-display .pokemon-card.hero .pokemon-info .pokemon-stats .stat-row .stat-bar-fill {
   height: 100%;
-  background: linear-gradient(90deg, #4ade80, #22c55e);
+  background: linear-gradient(
+    90deg,
+    var(--stat-green-start),
+    var(--stat-green-end)
+  );
   border-radius: 10px;
   transition: width 0.4s ease;
 }
@@ -98,7 +103,7 @@ body .radom-pokemon-display .pokemon-card.hero .pokemon-info .pokemon-abilities 
 }
 
 body .radom-pokemon-display .pokemon-card.hero .pokemon-info .pokemon-abilities .abilities-label {
-  color: black;
+  color: var(--text);
   font-weight: bold;
   padding-bottom: 2px;
   border-bottom: 1px solid var(--border);
@@ -109,6 +114,10 @@ body #big-container main .pokemon-list {
   flex-direction: column;
   align-items: flex-start;
   gap: 20px;
+}
+
+body #big-container main .pokemon-list h2 {
+  color: var(--text);
 }
 
 body #big-container main .pokemon-container {
@@ -154,10 +163,14 @@ body #big-container main .pokemon-container .pokemon-card .pokemon-id {
   left: calc(0% + 10px);
 
   font-weight: bold;
-  color: black;
+  color: var(--text);
   background-color: var(--bg);
   padding: 5px;
   border-radius: var(--radius-lg);
+}
+
+body #big-container main .pokemon-container .pokemon-card h3 {
+  color: var(--text);
 }
 
 body #big-container main .pokemon-container .pokemon-card img {
@@ -173,7 +186,7 @@ body #big-container main .pokemon-container .pokemon-card .pokemon-types {
 }
 
 body #big-container main .pokemon-container .pokemon-card .pokemon-types .type {
-  color: white;
+  color: var(--text-invert);
   padding: 4px 8px;
   border-radius: 8px;
   font-size: 12px;

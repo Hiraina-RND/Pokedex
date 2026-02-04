@@ -2,7 +2,6 @@ body #big-container header {
     z-index: 10;
     position: relative;
     width: 100%;
-    background-color: white;
     box-shadow: var(--shadow);
 
     display: flex;
@@ -12,6 +11,14 @@ body #big-container header {
     padding: 20px;
     border-top-left-radius: var(--radius-sm);
     border-top-right-radius: var(--radius-sm);
+}
+
+body #big-container header h1 {
+    color: var(--text);
+}
+
+body #big-container header .title img {
+    color: var(--text);
 }
 
 body #big-container header .btn-to-show-aside {
@@ -27,8 +34,8 @@ body #big-container header .btn-to-show-aside {
     border-top-right-radius: var(--radius-sm);
     border-bottom-right-radius: var(--radius-sm);
     
-    background-color: rgba(255, 255, 255, 0.5);
-    color: rgba(0, 0, 0, 0.6);
+    color: var(--text);
+    background-color: var(--bg);
 }
 
 body #big-container header .btn-to-show-aside.movedRight {
@@ -76,11 +83,14 @@ body #big-container header .title-search-bar .search-bar input {
     padding-left: 40px;
     border: 2px solid var(--border);
     border-radius: var(--radius-lg);
+    background-color: var(--input-bg);
+    color: var(--text);
 }
 
 body #big-container header .title-search-bar .search-bar span {
     position: absolute;
     left: 10px;
+    color: var(--text-muted);
 }
 
 body #big-container header .title-search-bar .title img {
@@ -121,7 +131,7 @@ body #big-container header #options .favories-pokemons-btn {
 
 body #big-container header #options .favories-pokemons-btn {
     border: none;
-    color: white;
+    color: var(--text-invert);
     background-color: var(--type-water);
 }
 
@@ -131,6 +141,7 @@ body #big-container header #options .setting {
     border-radius: var(--radius-lg);
     padding: 5px;
     background-color: transparent;
+    color: var(--text);
 }
 
 body #big-container aside {
@@ -155,6 +166,10 @@ body #big-container aside .type-section {
     display: flex;
     flex-direction: column;
     gap: 18px;
+}
+
+body #big-container aside .type-section h2 {
+    color: var(--text);
 }
 
 body #big-container aside .type-section .type-list {
@@ -248,7 +263,8 @@ body #big-container aside .type-section .type-list li button {
     padding: 5px;
 
     border: none;
-    background-color: white;
+    background-color: transparent;
+    color: var(--text);
 }
 
 body #big-container aside .type-section .show-more-types {
@@ -257,6 +273,8 @@ body #big-container aside .type-section .show-more-types {
     border: none;
     padding: 3px;
     border-radius: 10px;
+    background-color: var(--bg);
+    color: var(--text);
 }
 
 body #big-container aside .type-section .show-more-types i {
@@ -278,13 +296,16 @@ body #big-container aside .type-section .type-list .type-btn:hover {
     opacity: 0.8;
 }
 
-
 body #big-container aside .filter-section {
     width: 100%;
 
     display: flex;
     flex-direction: column;
     gap: 18px;
+}
+
+body #big-container aside .filter-section h2 {
+    color: var(--text);
 }
 
 body #big-container aside .filter-section .filter-options {
@@ -305,9 +326,10 @@ body #big-container aside .filter-section .filter-options li button {
     gap: 5px;
     padding: 5px;
 
-    background-color: white;
+    background-color: var(--card);
     border: 1px solid var(--border);
     border-radius: var(--radius-sm);
+    color: var(--text);
 }
 
 body #big-container aside .filter-section .filter-actions {
@@ -331,13 +353,13 @@ body #big-container aside .filter-section .filter-actions button {
 body #big-container aside .filter-section .filter-actions .apply-filters {
     border: 1px solid var(--border);
     background-color: var(--bg);
-    color: black;
+    color: var(--text);
 }
 
 body #big-container aside .filter-section .filter-actions .clear-filters {
     border: none;
     background-color: var(--type-fire);
-    color: white;
+    color: var(--text-invert);
 }
 
 @media (max-width: 480px) {

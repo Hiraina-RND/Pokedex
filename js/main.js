@@ -1,5 +1,6 @@
 import { setActiveType, renderPokemons, showMoreTypes, removeMoreTypes, toggleAside, hideAside, renderRandomPokemon } from "./ui.js";
 import { fetchPokemonsByType, fetchRandomPokemon } from "./data.js";
+import { switchTheme, initTheme } from "./theme.js";
 
 let currentType = "normal";
 const buttonToShowMoreTypes = document.querySelector(".show-more-types");
@@ -61,6 +62,12 @@ aside.addEventListener("click", (event) => {
   event.stopPropagation();
 });
 
+const themeToggleBtn = document.querySelector(".theme-toggle-btn");
+themeToggleBtn.addEventListener("click", () => {
+  switchTheme();
+});
+
+initTheme();
 showRandomPokemonOnLoad();
 initTypeButtons();
 updatePokemons(currentType);
