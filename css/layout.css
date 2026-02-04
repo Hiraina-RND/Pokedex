@@ -271,6 +271,7 @@ body #big-container aside .type-section .type-list .type-btn.active {
     transform: scale(1.05);
     border: 1px solid var(--border);
     border-radius: var(--radius-sm);
+    background-color: var(--bg);
 }
 
 body #big-container aside .type-section .type-list .type-btn:hover {
@@ -357,10 +358,10 @@ body #big-container aside .filter-section .filter-actions .clear-filters {
 
     body #big-container header .title-search-bar {
         width: 100%;
-        justify-content: space-between;
     }
 
-    body #big-container header .title-search-bar .title h1 {
+    body #big-container header .title-search-bar .title h1,
+    body #big-container header .title-search-bar .title img {
         display: none;
     }
 
@@ -369,7 +370,7 @@ body #big-container aside .filter-section .filter-actions .clear-filters {
     }
 
     body #big-container header .title-search-bar .search-bar input {
-        width: auto;
+        width: 100%;
         min-width: 0;
     }
 

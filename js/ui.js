@@ -106,6 +106,8 @@ export function renderRandomPokemon(pokemon) {
   const container = document.querySelector(".radom-pokemon-display");
   container.innerHTML = "";
 
+  const MAX_STAT_VALUE = 255;
+
   const card = document.createElement("div");
   card.className = "pokemon-card hero";
 
@@ -121,6 +123,7 @@ export function renderRandomPokemon(pokemon) {
 
   const types = document.createElement("div");
   types.className = "pokemon-types";
+
   pokemon.types.forEach(type => {
     const span = document.createElement("span");
     span.className = `type ${type}`;
@@ -130,24 +133,49 @@ export function renderRandomPokemon(pokemon) {
 
   const stats = document.createElement("div");
   stats.className = "pokemon-stats";
+
   pokemon.stats.forEach(stat => {
     const statRow = document.createElement("div");
     statRow.className = "stat-row";
 
     const label = document.createElement("span");
+    label.className = "stat-label";
     label.textContent = stat.name;
+
+    const barContainer = document.createElement("div");
+    barContainer.className = "stat-bar";
+
+    const barFill = document.createElement("div");
+    barFill.className = "stat-bar-fill";
+
+    const percentage = Math.min(
+      (stat.value / MAX_STAT_VALUE) * 100,
+      100
+    );
+    barFill.style.width = `${percentage}%`;
+
     const value = document.createElement("span");
+    value.className = "stat-value";
     value.textContent = stat.value;
 
-    statRow.append(label, value);
+    barContainer.appendChild(barFill);
+    statRow.append(label, barContainer, value);
     stats.appendChild(statRow);
   });
 
   const abilities = document.createElement("p");
   abilities.className = "pokemon-abilities";
-  abilities.textContent = `Abilities: ${pokemon.abilities.join(", ")}`;
 
-  info.append(name, types, abilities, stats);
+  const abilitiesLabel = document.createElement("span");
+  abilitiesLabel.className = "abilities-label";
+  abilitiesLabel.textContent = "Abilities : ";
+
+  const abilitiesText = document.createTextNode(pokemon.abilities.join(", "));
+
+  abilities.append(abilitiesLabel, abilitiesText);
+
+
+  info.append(name, types, stats, abilities);
   card.append(img, info);
   container.appendChild(card);
 }
