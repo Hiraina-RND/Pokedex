@@ -31,7 +31,7 @@ body .radom-pokemon-display .pokemon-card.hero .pokemon-info {
 
 body .radom-pokemon-display .pokemon-card.hero .pokemon-info h2 {
   font-size: 1.8rem;
-  margin-bottom: 5px;
+  text-align: center;
 }
 
 body .radom-pokemon-display .pokemon-card.hero .pokemon-info .pokemon-types {
@@ -44,7 +44,7 @@ body .radom-pokemon-display .pokemon-card.hero .pokemon-info .pokemon-types .typ
   border-radius: 12px;
   font-weight: bold;
   font-size: 14px;
-  color: var(--text);
+  color: white;
   box-shadow: var(--shadow);
 }
 
@@ -173,7 +173,7 @@ body #big-container main .pokemon-container .pokemon-card .pokemon-types {
 }
 
 body #big-container main .pokemon-container .pokemon-card .pokemon-types .type {
-  color: var(--text);
+  color: white;
   padding: 4px 8px;
   border-radius: 8px;
   font-size: 12px;
@@ -194,10 +194,10 @@ body #big-container main .pokemon-container .pokemon-card .pokemon-types .type {
 .type.rock { background: var(--type-rock); }
 .type.ground { background: var(--type-ground); }
 .type.bug { background: var(--type-bug); }
-.type.dragon { background: var(--type-dragon); color:white; }
-.type.dark { background: var(--type-dark); color:white; }
+.type.dragon { background: var(--type-dragon); }
+.type.dark { background: var(--type-dark); }
 .type.steel { background: var(--type-steel); }
-.type.fighting { background: var(--type-fighting); color:white; }
+.type.fighting { background: var(--type-fighting); }
 .type.flying { background: var(--type-flying); }
 
 @media (max-width: 480px) {
@@ -212,6 +212,10 @@ body #big-container main .pokemon-container .pokemon-card .pokemon-types .type {
 
   body .radom-pokemon-display .pokemon-card.hero {
     flex-direction: column;
+  }
+
+  body .radom-pokemon-display .pokemon-card.hero .pokemon-info h2 {
+    font-size: large;
   }
 
   body .radom-pokemon-display .pokemon-card.hero .pokemon-info .pokemon-stats .stat-row .stat-label {
