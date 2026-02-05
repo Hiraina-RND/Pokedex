@@ -1,4 +1,4 @@
-import { setActiveType, renderPokemons, showMoreTypes, removeMoreTypes, toggleAside, hideAside, renderRandomPokemon, scrollIntoPokemonList } from "./ui.js";
+import { setActiveType, renderPokemons, showMoreTypes, removeMoreTypes, toggleAside, hideAside, renderRandomPokemon, scrollIntoPokemonList, clearSearchInput } from "./ui.js";
 import { fetchPokemonsByType, fetchRandomPokemon, searchPokemonByName } from "./data.js";
 import { switchTheme, initTheme } from "./theme.js";
 
@@ -70,6 +70,7 @@ searchInput.addEventListener("keydown", async (event) => {
 
     scrollIntoPokemonList();
     const inputValue = searchInput.value.trim();
+    clearSearchInput();
     if (inputValue.length === 0) {
         await updatePokemons(currentType);
         return;

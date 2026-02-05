@@ -197,3 +197,8 @@ export function scrollIntoPokemonList() {
   const pokemonList = document.querySelector(".pokemon-container");
   pokemonList.scrollIntoView({ behavior: "smooth" });
 }
+
+export function clearSearchInput() {
+  const searchInput = document.querySelector('#search-input');
+  searchInput.value = '';
+}
