@@ -21,6 +21,8 @@
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 18px;
+
+  --all-pokemon-btn-bg-hover: #3b93ff;
 }
 
 body.dark {

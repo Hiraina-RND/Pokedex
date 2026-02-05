@@ -33,7 +33,7 @@ body #big-container header .btn-to-show-aside {
     padding: 10px 10px;
     border-top-right-radius: var(--radius-sm);
     border-bottom-right-radius: var(--radius-sm);
-    
+
     color: var(--text);
     background-color: var(--bg);
 }
@@ -111,6 +111,19 @@ body #big-container header #options .all-pokemons-btn {
     background-color: transparent;
     color: var(--type-water);
     border: 2px solid var(--type-water);
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+}
+
+body #big-container header #options .all-pokemons-btn:hover {
+    background-color: var(--type-water);
+    color: var(--text-invert);
+}
+
+body #big-container header #options .all-pokemons-btn:active {
+    transform: scale(0.96);
 }
 
 body #big-container header #options .all-pokemons-btn,
@@ -133,6 +146,15 @@ body #big-container header #options .favories-pokemons-btn {
     border: none;
     color: var(--text-invert);
     background-color: var(--type-water);
+    cursor: pointer;
+}
+
+body #big-container header #options .favories-pokemons-btn:hover {
+    background-color: var(--all-pokemon-btn-bg-hover);
+}
+
+body #big-container header #options .favories-pokemons-btn:active {
+    transform: scale(0.96);
 }
 
 body #big-container header #options .setting {
@@ -142,6 +164,10 @@ body #big-container header #options .setting {
     padding: 5px;
     background-color: transparent;
     color: var(--text);
+}
+
+body #big-container header #options .theme-toggle-btn {
+    cursor: pointer;
 }
 
 body #big-container aside {

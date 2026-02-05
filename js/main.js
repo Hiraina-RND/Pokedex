@@ -1,16 +1,19 @@
 import { setActiveType, renderPokemons, showMoreTypes, removeMoreTypes, toggleAside, hideAside, renderRandomPokemon, scrollIntoPokemonList, clearSearchInput, removeTypeBtnStyle } from "./ui.js";
-import { fetchPokemonsByType, fetchRandomPokemon, searchPokemonByName } from "./data.js";
+import { fetchPokemonsByType, fetchRandomPokemon, searchPokemonByName, fetchAllPokemons } from "./data.js";
 import { switchTheme, initTheme } from "./theme.js";
 
 let currentType = "normal";
 let isResultesBysearch = false;
+let isAllResult = false;
 const buttonToShowMoreTypes = document.querySelector(".show-more-types");
 
 function handleTypeClick(btn) {
     btn.addEventListener("click", async () => {
         scrollIntoPokemonList();
         const type = btn.dataset.type;
-        if (type === currentType && isResultesBysearch === false) return;
+        if (type === currentType
+            && isResultesBysearch === false
+            && isAllResult === false) return;
 
         hideAside();
         currentType = type;
@@ -84,6 +87,17 @@ searchInput.addEventListener("keydown", async (event) => {
     const pokemons = await searchPokemonByName(inputValue);
     renderPokemons(pokemons);
 });
+
+const allPokemonBtn = document.querySelector(".all-pokemons-btn")
+allPokemonBtn.addEventListener("click", async (event) => {
+    event.stopPropagation();
+
+    isAllResult = true;
+    removeTypeBtnStyle();
+    scrollIntoPokemonList();
+    const pokemons = await fetchAllPokemons();
+    renderPokemons(pokemons);
+})
 
 
 initTheme();
