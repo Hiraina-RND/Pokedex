@@ -64,6 +64,7 @@ body #big-container main {
     align-items: flex-start;
     gap: 50px;
     padding: 20px;
+    border-bottom-right-radius: var(--radius-sm);
 }
 
 @media (max-width: 480px) {
@@ -91,5 +92,9 @@ body #big-container main {
 
     body #big-container aside.visible {
         transform: translateX(0);
+    }
+
+    body #big-container main {
+        border-bottom-left-radius: var(--radius-sm);
     }
 }
