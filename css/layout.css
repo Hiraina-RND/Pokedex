@@ -294,6 +294,7 @@ body #big-container aside .type-section .type-list .type-btn.active {
 
 body #big-container aside .type-section .type-list .type-btn:hover {
     opacity: 0.8;
+    cursor: pointer;
 }
 
 body #big-container aside .filter-section {

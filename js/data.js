@@ -43,3 +43,27 @@ export async function fetchRandomPokemon() {
     stats: data.stats.map(s => ({ name: s.stat.name, value: s.base_stat }))
   };
 }
+
+let cachedPokemons = [];
+export async function fetchAllPokemons() {
+  if (cachedPokemons.length > 0) return cachedPokemons;
+
+  const url = `https://pokeapi.co/api/v2/pokemon?limit=898`;
+  const response = await fetch(url);
+  const data = await response.json();
+
+  const detailedPokemons = await Promise.all(
+    data.results.map(pokemon => fetchPokemonDetails(pokemon.url))
+  );
+
+  cachedPokemons = detailedPokemons;
+
+  return cachedPokemons;
+}
+
+export async function searchPokemonByName(name) {
+  const pokemons = await fetchAllPokemons();
+  return pokemons.filter(pokemon =>
+    pokemon.name.toLowerCase().includes(name.toLowerCase())
+  );
+}

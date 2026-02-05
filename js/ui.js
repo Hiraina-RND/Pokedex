@@ -192,3 +192,8 @@ export function hideAside() {
   aside.classList.remove("visible");
   btnToShowAside.classList.remove("movedRight");
 }
+
+export function scrollIntoPokemonList() {
+  const pokemonList = document.querySelector(".pokemon-container");
+  pokemonList.scrollIntoView({ behavior: "smooth" });
+}
