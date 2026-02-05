@@ -14,6 +14,10 @@ body {
     font-family: "Poppins", sans-serif;
     background-color: var(--bg);
     overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 body #big-container {
@@ -26,7 +30,6 @@ body #big-container {
 
     width: calc(100% - 30px);
     height: calc(100% - 30px);
-    margin: 15px;
 
     background-color: var(--bg-soft);
     border: 2px solid var(--border);
