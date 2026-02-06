@@ -57,9 +57,9 @@ export const removeMoreTypes = () => {
   });
 };
 
-const buttons = document.querySelectorAll(".type-btn");
 
 export function setActiveType(type) {
+  const buttons = document.querySelectorAll(".type-btn");
   buttons.forEach(btn => {
     if (btn.dataset.type === type) {
       btn.classList.add("active");
@@ -70,6 +70,7 @@ export function setActiveType(type) {
 }
 
 export function removeTypeBtnStyle() {
+  const buttons = document.querySelectorAll(".type-btn");
   buttons.forEach(btn => {
     if (btn.classList.contains("active")) {
       btn.classList.remove("active");
