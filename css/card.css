@@ -169,6 +169,23 @@ body #big-container main .pokemon-container .pokemon-card .pokemon-id {
   border-radius: var(--radius-lg);
 }
 
+.pokemon-card .favorite-btn .favorite-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: x-large;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pokemon-card .favorite-btn .favorite-icon.active {
+  color: white;
+  background-color: var(--heart-color);
+  padding: 5px;
+  border-radius: 50%;
+}
+
+
 body #big-container main .pokemon-container .pokemon-card h3 {
   color: var(--text);
 }

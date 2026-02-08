@@ -127,7 +127,7 @@ body #big-container header #options .all-pokemons-btn:active {
 }
 
 body #big-container header #options .all-pokemons-btn,
-body #big-container header #options .favories-pokemons-btn {
+body #big-container header #options .favorites-pokemons-btn {
     width: 120px;
     min-width: 0;
     padding: 8px;
@@ -142,18 +142,18 @@ body #big-container header #options .favories-pokemons-btn {
     align-items: center;
 }
 
-body #big-container header #options .favories-pokemons-btn {
+body #big-container header #options .favorites-pokemons-btn {
     border: none;
     color: var(--text-invert);
     background-color: var(--type-water);
     cursor: pointer;
 }
 
-body #big-container header #options .favories-pokemons-btn:hover {
+body #big-container header #options .favorites-pokemons-btn:hover {
     background-color: var(--all-pokemon-btn-bg-hover);
 }
 
-body #big-container header #options .favories-pokemons-btn:active {
+body #big-container header #options .favorites-pokemons-btn:active {
     transform: scale(0.96);
 }
 
@@ -432,7 +432,7 @@ body #big-container aside .filter-section .filter-actions .clear-filters {
     }
 
     body #big-container header #options .all-pokemons-btn,
-    body #big-container header #options .favories-pokemons-btn {
+    body #big-container header #options .favorites-pokemons-btn {
         flex: 1;
         width: auto;
         padding: 6px;

@@ -4,7 +4,7 @@ export async function fetchPokemonsByType(type) {
   const response = await fetch(url);
   const data = await response.json();
 
-  const basicsPokemons =  data.pokemon.map(p => p.pokemon);
+  const basicsPokemons = data.pokemon.map(p => p.pokemon);
   const detailedPokemos = await Promise.all(
     basicsPokemons.map(pokemon => fetchPokemonDetails(pokemon.url))
   );
@@ -17,10 +17,10 @@ async function fetchPokemonDetails(pokemonUrl) {
   const data = await response.json();
 
   return {
-    id : data.id,
-    name : data.name,
-    image : data.sprites.other["official-artwork"].front_default,
-    types : data.types.map(t => t.type.name)
+    id: data.id,
+    name: data.name,
+    image: data.sprites.other["official-artwork"].front_default,
+    types: data.types.map(t => t.type.name)
   }
 }
 
@@ -66,4 +66,38 @@ export async function searchPokemonByName(name) {
   return pokemons.filter(pokemon =>
     pokemon.name.toLowerCase().includes(name.toLowerCase())
   );
+}
+
+export async function findPokemonById(id) {
+  const url = `https://pokeapi.co/api/v2/pokemon/${id}`
+
+  return fetchPokemonDetails(url);
+}
+
+export function getFavorites() {
+  const data = JSON.parse(localStorage.getItem("favorites"));
+  if (Array.isArray(data)) {
+    return data;
+  } else {
+    return [];
+  }
+}
+
+export function toggleFavorite(id) {
+  const favorites = getFavorites();
+  let updatedList;
+
+  if (favorites.includes(id)) {
+    updatedList = favorites.filter(fav => fav !== id);
+  } else {
+    updatedList = [...favorites, id];
+  }
+
+  localStorage.setItem("favorites", JSON.stringify(updatedList));
+  return updatedList;
+}
+
+export function isFavorite(id) {
+  const favorites = getFavorites();
+  return favorites.includes(id);
 }

@@ -23,6 +23,8 @@
   --radius-lg: 18px;
 
   --all-pokemon-btn-bg-hover: #3b93ff;
+
+  --heart-color : rgb(253, 79, 79);
 }
 
 body.dark {

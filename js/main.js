@@ -1,5 +1,5 @@
-import { setActiveType, renderPokemons, showMoreTypes, removeMoreTypes, toggleAside, hideAside, renderRandomPokemon, scrollIntoPokemonList, clearSearchInput, removeTypeBtnStyle } from "./ui.js";
-import { fetchPokemonsByType, fetchRandomPokemon, searchPokemonByName, fetchAllPokemons } from "./data.js";
+import { setActiveType, renderPokemons, showMoreTypes, removeMoreTypes, toggleAside, hideAside, renderRandomPokemon, scrollIntoPokemonList, clearSearchInput, removeTypeBtnStyle, updateFavoriteButton } from "./ui.js";
+import { fetchPokemonsByType, fetchRandomPokemon, searchPokemonByName, fetchAllPokemons, toggleFavorite, isFavorite, getFavorites, findPokemonById } from "./data.js";
 import { switchTheme, initTheme } from "./theme.js";
 
 let currentType = "normal";
@@ -97,6 +97,31 @@ allPokemonBtn.addEventListener("click", async (event) => {
     scrollIntoPokemonList();
     const pokemons = await fetchAllPokemons();
     renderPokemons(pokemons);
+})
+
+document.addEventListener("click", (e) => {
+    if (e.target.classList.contains("favorite-icon")) {
+        const card = e.target.closest(".pokemon-card");
+        const id = Number(card.dataset.id);
+
+        toggleFavorite(id);
+
+        const isFav = isFavorite(id);
+        updateFavoriteButton(e.target, isFav);
+    }
+})
+
+const favoriteBtn = document.querySelector(".favorites-pokemons-btn");
+favoriteBtn.addEventListener("click", async (e) => {
+    e.stopPropagation();
+    scrollIntoPokemonList();
+
+    const favoriteIds = getFavorites();
+    const allFavoritePokemons = await Promise.all(
+        favoriteIds.map(id => findPokemonById(id))
+    );
+
+    renderPokemons(allFavoritePokemons);
 })
 
 

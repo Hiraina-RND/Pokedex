@@ -1,3 +1,5 @@
+import { isFavorite } from "./data.js";
+
 const createElement = (tag, options = {}) => {
   const element = document.createElement(tag);
 
@@ -86,9 +88,21 @@ export function renderPokemons(pokemons) {
     const card = document.createElement("div");
     card.className = "pokemon-card";
 
+    card.dataset.id = pokemon.id;
+
     const pokemonId = document.createElement("span");
     pokemonId.className = "pokemon-id";
     pokemonId.textContent = `#${pokemon.id}`;
+
+    const favoriteBtn = document.createElement("span");
+    favoriteBtn.className = "favorite-btn";
+    const favoriteIcon = document.createElement("i");
+    favoriteIcon.className = "favorite-icon fa-regular fa-heart";
+
+    const isFav = isFavorite(Number(pokemon.id));
+    if (isFav) favoriteIcon.classList.add("active");
+
+    favoriteBtn.append(favoriteIcon);
 
     const img = document.createElement("img");
     img.src = pokemon.image;
@@ -107,7 +121,7 @@ export function renderPokemons(pokemons) {
       types.appendChild(span);
     });
 
-    card.append(pokemonId, img, name, types);
+    card.append(pokemonId, favoriteBtn,img, name, types);
     container.appendChild(card);
   });
 }
@@ -211,4 +225,12 @@ export function scrollIntoPokemonList() {
 export function clearSearchInput() {
   const searchInput = document.querySelector('#search-input');
   searchInput.value = '';
+}
+
+export function updateFavoriteButton(button, isFavorite) {
+  if (isFavorite) {
+    button.classList.add("active");
+  } else {
+    button.classList.remove("active");
+  }
 }
