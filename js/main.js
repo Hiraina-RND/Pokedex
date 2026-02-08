@@ -5,6 +5,7 @@ import { switchTheme, initTheme } from "./theme.js";
 let currentType = "normal";
 let isResultesBysearch = false;
 let isAllResult = false;
+let isFavoritesResult = false;
 const buttonToShowMoreTypes = document.querySelector(".show-more-types");
 
 function handleTypeClick(btn) {
@@ -13,7 +14,8 @@ function handleTypeClick(btn) {
         const type = btn.dataset.type;
         if (type === currentType
             && isResultesBysearch === false
-            && isAllResult === false) return;
+            && isAllResult === false
+            && isFavoritesResult == false) return;
 
         hideAside();
         currentType = type;
@@ -28,6 +30,8 @@ function initTypeButtons() {
 
 async function updatePokemons(type) {
     isResultesBysearch = false;
+    isFavoritesResult = false;
+    isAllResult = false;
     setActiveType(type);
     const pokemons = await fetchPokemonsByType(type);
     renderPokemons(pokemons);
@@ -114,7 +118,9 @@ document.addEventListener("click", (e) => {
 const favoriteBtn = document.querySelector(".favorites-pokemons-btn");
 favoriteBtn.addEventListener("click", async (e) => {
     e.stopPropagation();
+    isFavoritesResult = true;
     scrollIntoPokemonList();
+    removeTypeBtnStyle();
 
     const favoriteIds = getFavorites();
     const allFavoritePokemons = await Promise.all(
